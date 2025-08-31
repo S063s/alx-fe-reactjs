@@ -6,6 +6,7 @@ import WelcomeMessage from '.src/components/WelcomeMessage.jsx'
 import Header from './Header'
 import MainContent from './MainContent'
 import Footer from './Footer'
+import UserProfile from '.src/components/UserProfile.jsx'
 
 
 function App() {
@@ -17,7 +18,7 @@ function App() {
       <MainContent />
       <Footer />
       <WelcomeMessage />
-      
+
       <div>
         <a href="https://vite.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
