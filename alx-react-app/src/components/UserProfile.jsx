@@ -1,9 +1,11 @@
-function UserProfile(props) {
+const UserProfile = (props) => {
    return (
      <div>
-       <h2>Alice</h2>
-       <p>Age: 25</p>
-       <p>Bio: loves hiking and photography</p>
+       <h2>{props.name}</h2>
+       <p>Age: {props.age}</p>
+       <p>Bio: {props.bio}</p>
      </div>
    );
  };
+
+export default UserProfile;

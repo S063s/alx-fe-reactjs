@@ -6,7 +6,7 @@ import WelcomeMessage from '.src/components/WelcomeMessage.jsx'
 import Header from './Header'
 import MainContent from './MainContent'
 import Footer from './Footer'
-import UserProfile from '.src/components/UserProfile.jsx'
+import UserProfile from './components/UserProfile.jsx'
 
 
 function App() {
