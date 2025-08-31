@@ -9,7 +9,11 @@ import Footer from './Footer'
 import UserProfile from './components/UserProfile.jsx'
 
 
-
+function App() {
+  return (
+    <UserProfile name="Alice" age={25} bio="loves hiking and photography" />
+  );
+}
 
 function App() {
   const [count, setCount] = useState(0)
