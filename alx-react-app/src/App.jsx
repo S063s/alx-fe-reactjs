@@ -4,8 +4,8 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import WelcomeMessage from '.src/components/WelcomeMessage.jsx'
 import Header from '../../alx-react-app-new/src/components/Header.jsx'
-import MainContent from './components/MainContent.jsx'
-import Footer from './components/Footer.jsx'
+import MainContent from '../../alx-react-app-new/src/components/MainContent.jsx'
+import Footer from '../../alx-react-app-new/src/components/Footer.jsx'
 import UserProfile from '../../alx-react-app-new/src/components/UserProfile.jsx'
 
 
