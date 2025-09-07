@@ -2,11 +2,12 @@ import { Link } from 'react-router-dom';
 
 function Navbar() {
   return (
-    <nav>
-      <ul>
-        <li>
-          <Link to="/">Home</Link>
-        </li>
+    <div style ={{ padding: '10px', backgroundColor: '#f0f0f0', fontFamily: 'Arial, sans-serif' }}>
+      <nav>
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
         <li>
           <Link to="/about">About</Link>
         </li>
@@ -18,7 +19,9 @@ function Navbar() {
         </li>
       </ul>
     </nav>
-  );
+  </div>
+);
+
 }
 
 export default Navbar;
