@@ -5,6 +5,7 @@ import './App.css'
 import AddRecipeForm from './components/AddRecipeForm'
 import RecipeList from './components/RecipeList'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import RecipeDetails from './components/RecipeDetails'
 
 function App() {
   const [count, setCount] = useState(0)
