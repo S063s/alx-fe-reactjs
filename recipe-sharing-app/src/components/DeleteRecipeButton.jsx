@@ -1,5 +1,5 @@
 import { useRecipeStore } from './recipeStore';
-import useNavigate from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 const RecipeDetails = ({ recipeId }) => {
   const recipe = useRecipeStore(state =>
