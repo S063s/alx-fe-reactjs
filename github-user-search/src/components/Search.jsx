@@ -18,10 +18,16 @@ const Search = ({ onSearch, loading, error }) => {
           handleSearch();
         }}
         placeholder="Search GitHub users..."
+        avatar={<img src="/path/to/avatar/image.png" alt="Avatar" />}
+        login={<img src="/path/to/login/image.png" alt="Login" />}
+        error={<img src="/path/to/error/image.png" alt="Error" />}
+        onChange={(e) => setQuery(e.target.value)}
+        form='search-form'
       />
+
       <button onClick={handleSearch}>Search</button>
       {loading && <p>Loading...</p>}
-      {error && <p style={{ color: 'red' }}>Looks like we can't find the user</p>}
+      {error && <p style={{ color: 'red' }}>Looks like we can't find the user, <img src="/path/to/error/image.png" alt="Error" /></p>}
     </div>
   );
 };
