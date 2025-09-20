@@ -13,7 +13,10 @@ const Search = ({ onSearch, loading, error }) => {
       <input
         type="text"
         value={query}
-        onChange={(e) => setQuery(e.target.value)}
+        onSubmit={(e) => {
+          e.preventDefault();
+          handleSearch();
+        }}
         placeholder="Search GitHub users..."
       />
       <button onClick={handleSearch}>Search</button>
