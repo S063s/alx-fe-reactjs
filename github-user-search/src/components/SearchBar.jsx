@@ -21,4 +21,7 @@ const SearchBar = ({ onSearch }) => {
   );
 };
 
+loading && <p>Loading...</p>
+error && <p style={{ color: 'red' }}>Looks like we can't find the user</p>
+
 export default SearchBar;
