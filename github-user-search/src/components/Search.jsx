@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { fetchUserData } from '../services/githubService';
 
 const Search = ({ onSearch, loading, error }) => {
   const [query, setQuery] = useState("");
@@ -7,6 +8,8 @@ const Search = ({ onSearch, loading, error }) => {
     onSearch(query);
     setQuery("");
   };
+
+  fetchUserData(query);
 
   return (
     <div>
