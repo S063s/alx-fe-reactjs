@@ -44,7 +44,7 @@ const Search = ({ onSearch, loading, error }) => {
       {loading && <p>Loading...</p>}
       {error && (
         <p style={{ color: 'red' }}>
-          Looks like we can't find the user,{' '}
+          Looks like we cant find the user,{' '}
           <img
             src="/path/to/error/image.png"
             alt="Error icon, red exclamation mark inside a circle, conveys warning or alert"
