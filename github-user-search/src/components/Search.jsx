@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useState } from 'react';
 
-const SearchBar = ({ onSearch }) => {
+const Search = ({ onSearch, loading, error }) => {
   const [query, setQuery] = useState("");
 
   const handleSearch = () => {
@@ -17,11 +17,10 @@ const SearchBar = ({ onSearch }) => {
         placeholder="Search GitHub users..."
       />
       <button onClick={handleSearch}>Search</button>
+      {loading && <p>Loading...</p>}
+      {error && <p style={{ color: 'red' }}>Looks like we can't find the user</p>}
     </div>
   );
 };
 
-loading && <p>Loading...</p>
-error && <p style={{ color: 'red' }}>Looks like we can't find the user</p>
-
-export default SearchBar;
+export default Search;
