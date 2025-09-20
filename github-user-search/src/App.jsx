@@ -1,10 +1,17 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Home from "./components/Home";
-import UserDetails from "./components/UserDetails";
+import components from "src/components";
+import services from "src/services";
 
 const App = () => {
   return (
     <Router>
-      {/* Add your routes/components here */}
+      <Routes>
+        <Route path="/" element={<components.Home />} />
+        <Route path="/user/:id" element={<components.UserDetails />} />
+      </Routes>
     </Router>
+  );
+};
+
+export default App;
