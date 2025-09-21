@@ -12,7 +12,7 @@ export const locationData = async (username) => {
   return response.data.location;
 }
 
-export const minRepoData = async (username) => {
+export const minReposData = async (username) => {
   const response = await api.get(`/users/${username}/repos`);
   return response.data;
 }
