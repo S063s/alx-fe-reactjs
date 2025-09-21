@@ -7,6 +7,16 @@ const api = axios.create({
   }
 });
 
+export const locationData = async (username) => {
+  const response = await api.get(`/users/${username}`);
+  return response.data.location;
+}
+
+export const repoData = async (username) => {
+  const response = await api.get(`/users/${username}/repos`);
+  return response.data;
+}
+
 export const fetchUserData = async (username) => {
   const response = await api.get(`/users/${username}`);
   return response.data;
@@ -16,3 +26,5 @@ export const searchUsers = async (query) => {
   const response = await api.get(`?q=${query}`);
   return response.data.items;
 };
+
+export default api;
