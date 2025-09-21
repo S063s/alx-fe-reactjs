@@ -4,10 +4,11 @@ import { fetchUserData } from '../services/githubService';
 const Search = ({ onSearch, loading, error }) => {
   const [query, setQuery] = useState("");
 
-  const handleSearch = () => {
-    onSearch(query);
+  const handleSearch = async () => {
+    await onSearch(query);
     setQuery("");
   };
+
 
   fetchUserData(query);
 
