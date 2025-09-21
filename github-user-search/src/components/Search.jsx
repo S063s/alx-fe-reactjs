@@ -4,47 +4,32 @@ import { fetchUserData } from '../services/githubService';
 const Search = ({ onSearch, loading, error }) => {
   const [query, setQuery] = useState("");
 
+  const [userList, setUserList] = useState([]);
+
   const handleSearch = async () => {
-    await onSearch(query);
-    setQuery("");
+    if (query.trim()) {
+      const users = await onSearch(query);
+      setUserList(users);
+    }
   };
-
-
-  fetchUserData(query);
 
   return (
     <div>
-      <input
-        type="text"
-        value={query}
+      <form
         onSubmit={(e) => {
           e.preventDefault();
           handleSearch();
         }}
-        placeholder="Search GitHub users..."
-        avatar_url={
-          <img
-            src="/path/to/avatar/image.png"
-            alt="GitHub user avatar, neutral expression, set against a plain background"
-          />
-        }
-        login={
-          <img
-            src="/path/to/login/image.png"
-            alt="Login icon, stylized person silhouette, displayed on a simple interface"
-          />
-        }
-        error={
-          <img
-            src="/path/to/error/image.png"
-            alt="Error icon, red exclamation mark inside a circle, conveys warning or alert"
-          />
-        }
-        onChange={(e) => setQuery(e.target.value)}
-        form="search-form"
-      />
-
-      <button onClick={handleSearch}>Search</button>
+        id="search-form"
+      >
+        <input
+          type="text"
+          value={query}
+          placeholder="Search GitHub users..."
+          onChange={(e) => setQuery(e.target.value)}
+        />
+        <button type="submit" disabled={loading}>Search</button>
+      </form>
       {loading && <p>Loading...</p>}
       {error && (
         <p style={{ color: 'red' }}>
@@ -55,6 +40,13 @@ const Search = ({ onSearch, loading, error }) => {
           />
         </p>
       )}
+      <div className="user-list">
+        {userList && userList.map(user => (
+          <div key={user.id} className="user-card">
+            <img src={user.avatar_url} alt={`${user.login} avatar`} />
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
