@@ -1,2 +1,18 @@
 @import "tailwindcss";
 
+div.user-profile {
+  @apply bg-blue-100 p-8 max-w-sm mx-auto my-20 rounded-lg shadow-lg;
+}
+
+.img {
+  @apply w-32 h-32 rounded-full mx-auto;
+}
+
+h1 {
+  @apply text-xl text-blue-800 my-4;
+}
+
+p {
+  @apply text-base text-gray-600;
+}
+
