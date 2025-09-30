@@ -2,14 +2,21 @@ function AddRecipeForm() {
   const [title, setTitle] = useState("");
   const [ingredients, setIngredients] = useState("");
   const [instructions, setInstructions] = useState("");
+  const [steps, setSteps] = useState([]);
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    const newRecipe = {
+      title,
+      ingredients: ingredients.split(","),
+      instructions: instructions.split(","),
+      steps
+    };
   };
 
   return (
     <form onSubmit={handleSubmit}>
-      <h2 className="text-2xl font-bold mb-4 rounded hover:shadow-lg">Add a New Recipe</h2>
+      <h2 className="text-2xl font-bold mb-4 rounded hover:shadow-lg grid">Add a New Recipe</h2>
       <label>
         Title:
         <input type="text" name="title" required value={title} onChange={(e) => setTitle(e.target.value)} />
