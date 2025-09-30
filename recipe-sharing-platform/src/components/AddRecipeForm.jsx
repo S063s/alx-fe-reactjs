@@ -3,11 +3,13 @@ function AddRecipeForm() {
   const [ingredients, setIngredients] = useState("");
   const [instructions, setInstructions] = useState("");
   const [steps, setSteps] = useState([]);
-  const [error, setError] = useState("");
+  const [errors, setErrors] = useState([]);
 
   
   const handleSubmit = (event) => {
     event.preventDefault();
+    if (!validateForm()) return;
+
     const newRecipe = {
       title,
       ingredients: ingredients.split(","),
@@ -17,11 +19,12 @@ function AddRecipeForm() {
   };
 
   const validateForm = () => {
-    if (!title || !ingredients || !instructions) {
-      setError("All fields are required.");
-      return false;
-    }
-    return true;
+    const newErrors = [];
+    if (!title) newErrors.push("Title is required.");
+    if (!ingredients) newErrors.push("Ingredients are required.");
+    if (!instructions) newErrors.push("Instructions are required.");
+    setErrors(newErrors);
+    return newErrors.length === 0;
   };
 
   return (
