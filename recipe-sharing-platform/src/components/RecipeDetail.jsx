@@ -11,6 +11,10 @@ function RecipeDetail() {
       const response = await fetch(`src/data.json`);
       const data = await response.json();
       const foundRecipe = data.find((r) => r.id === parseInt(id));
+      const ingredients = foundRecipe.ingredients.join(", ");
+      foundRecipe.ingredients = ingredients;
+      const instructions = foundRecipe.instructions.join(" ");
+      foundRecipe.instructions = instructions;
       setRecipe(foundRecipe);
     };
 
