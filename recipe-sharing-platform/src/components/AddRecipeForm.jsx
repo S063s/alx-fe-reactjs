@@ -29,7 +29,7 @@ function AddRecipeForm() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <h2 className="text-2xl font-bold mb-4 rounded hover:shadow-lg grid">Add a New Recipe</h2>
+      <h2 className="text-2xl font-bold mb-4 rounded hover:shadow-lg md:grid-cols-2">Add a New Recipe</h2>
       <label>
         Title:
         <input type="text" name="title" required value={title} onChange={(e) => setTitle(e.target.value)} />
@@ -42,7 +42,7 @@ function AddRecipeForm() {
         Instructions:
         <textarea name="instructions" required value={instructions} onChange={(e) => setInstructions(e.target.value)} />
       </label>
-      <button className="mt-4 bg-blue-500 text-white py-2 px-4 rounded" type="submit">Add Recipe</button>
+      <button className="mt-4 bg-blue-500 text-white py-2 px-4 rounded md:col-span-2" type="submit">Add Recipe</button>
     </form>
   );
 }
