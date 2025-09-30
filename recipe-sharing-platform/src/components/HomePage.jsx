@@ -27,6 +27,15 @@ function HomePage() {
             <p>{recipe.description}</p>
           </div>
         ))}
+        <div className="mt-8">
+          {Recipes.map((recipe, index) => (
+            <div key={index} className="mb-8">
+              <img className="w-full h-64 object-cover mb-4 hover:scale-105 transition-transform duration-300 shadow-lg rounded grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3" src={recipe.image} alt={recipe.title} />
+              <h2 className="text-xl font-semibold">{recipe.title}</h2>
+              <p>{recipe.description}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
