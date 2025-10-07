@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 
 function PostsComponent() {
     const [posts, setPosts] = useState([]);
-    const [error, setError] = useState(null);
+    const [isError, setError] = useState(null);
     const [isLoading, setIsLoading] = useState(false);
 
     const fetchPosts = async () => {
@@ -17,13 +17,15 @@ function PostsComponent() {
             setPosts(data);
         } catch (error) {
             setError(error.message);
+        } finally {
+            setIsLoading(false);
         }
     };
 
     return (
         <div>
             <button onClick={fetchPosts}>Fetch Posts</button>
-            {error && <div>Error: {error}</div>}
+            {isError && <div>Error: {isError}</div>}
             {isLoading && <div>Loading...</div>}
             <ul>
                 {posts.map(post => (
