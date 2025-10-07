@@ -5,8 +5,9 @@ function PostsComponent() {
     const [posts, setPosts] = useState([]);
     const [isError, setError] = useState(null);
     const [isLoading, setIsLoading] = useState(false);
-
-    const fetchPosts = async () => {
+    
+        
+    async function fetchPosts() {
         try {
             setIsLoading(true);
             const response = await fetch('https://jsonplaceholder.typicode.com/posts');
@@ -20,7 +21,11 @@ function PostsComponent() {
         } finally {
             setIsLoading(false);
         }
-    };
+    }
+    const cacheTime = 5 * 60 * 1000;
+    const refetchOnWindowFocus = false;
+    const keepPreviousData = true;
+    const staleTime = 1000 * 60;
 
     return (
         <div>
