@@ -1,8 +1,9 @@
 import { useState } from 'react';
+import FormikForm from './formikForm';
 
 const RegistrationForm = () => {
   return (
-    <form>
+    <FormikForm>
       <label htmlFor="username">Username:</label>
       <input type="text" id="username" name="username" required />
 
@@ -13,7 +14,7 @@ const RegistrationForm = () => {
       <input type="password" id="password" name="password" required />
 
       <button type="submit">Register</button>
-    </form>
+    </FormikForm>
   );
 };
 
