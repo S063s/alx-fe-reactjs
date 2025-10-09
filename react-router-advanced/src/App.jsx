@@ -19,7 +19,7 @@ const About = () => {
 const ProfileDetails = () => {
   return (
     <Routes>
-      <Route path="/blog/:blogId" element={<BlogPost />} />
+      <Route path="/blog/:Id" element={<BlogPost />} />
     </Routes>
   );
 }
