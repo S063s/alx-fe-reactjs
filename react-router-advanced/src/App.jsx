@@ -14,6 +14,15 @@ const About = () => {
   return <div>About Page</div>;
 }
 
+const ProfileDetails = () => {
+  const { blogId } = useParams();
+  return <div> BlogPost {blogId}</div>;
+}
+function ProfileSettings() {
+    const { userId } = useParams();
+    return <div>Profile Settings of user {userId}</div>;
+}
+
 function App() {
   const [count, setCount] = useState(0)
 
