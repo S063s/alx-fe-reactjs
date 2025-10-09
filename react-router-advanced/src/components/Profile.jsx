@@ -1,5 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import { useParams} from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 const router = createBrowserRouter([
   {
@@ -11,6 +12,14 @@ const router = createBrowserRouter([
     element: <ProfileSettings />,
   },
 ]);
+
+const Home = () => {
+  return <div>Home Page</div>;
+}
+
+const About = () => {
+  return <div>About Page</div>;
+}
 
 const ProfileDetails = () => {
   const { userId } = useParams();
