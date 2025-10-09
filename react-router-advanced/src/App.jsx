@@ -2,37 +2,24 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import { BrowserRouter } from 'react-router-dom'
-import { Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useParams} from "react-router-dom";
 import ProfileDetails from './components/ProfileDetails';
 import ProfileSettings from './components/ProfileSettings';
-import blog from './components/BlogPost';
+import BlogPost from './components/BlogPost';
 
-const Home = () => {
-  return <div>Home Page</div>;
-}
-
-const About = () => {
-  return <div>About Page</div>;
-}
-
-const BlogPost = () => {
-  return (
-    <Routes>
-      <Route path="/blog/:Id" element={<BlogPost />} />
-    </Routes>
-  );
-}
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
+        <Route path="/profile" element={<ProfileDetails />} />
+        <Route path="/profile/settings" element={<ProfileSettings />} />
+        <Route path="/blog/:Id" element={<BlogPost />} />
       </Routes>
       <>
         <div>
