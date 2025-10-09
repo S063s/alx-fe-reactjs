@@ -1,6 +1,6 @@
 function ProtectedRoute({ element }) {
-    const isAuthenticated = false; 
-    return isAuthenticated ? element : <Navigate to="/" />;
+    const useAuth = false;
+    return useAuth ? element : <Navigate to="/" />;
 }
 
 export default ProtectedRoute;
