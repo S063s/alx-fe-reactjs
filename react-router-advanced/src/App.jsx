@@ -5,6 +5,8 @@ import './App.css'
 import { BrowserRouter } from 'react-router-dom'
 import { Routes, Route } from 'react-router-dom'
 import { useParams} from "react-router-dom";
+import ProfileDetails from './components/ProfileDetails';
+import ProfileSettings from './components/ProfileSettings';
 
 const Home = () => {
   return <div>Home Page</div>;
@@ -15,12 +17,11 @@ const About = () => {
 }
 
 const ProfileDetails = () => {
-  const { blogId } = useParams();
-  return <div> BlogPost {blogId}</div>;
-}
-function ProfileSettings() {
-    const { userId } = useParams();
-    return <div>Profile Settings of user {userId}</div>;
+  return (
+    <Routes>
+      <Route path="/blog/:blogId" element={<BlogPost />} />
+    </Routes>
+  );
 }
 
 function App() {
