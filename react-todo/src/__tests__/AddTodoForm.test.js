@@ -1,5 +1,6 @@
 import { render, screen , fireEvent } from "@testing-library/react";
 import AddTodoForm from "../components/AddTodoForm";
+import "@testing-library/jest-dom/extend-expect";
 
 test("calls onAddTodo with the correct text when form is submitted", () => {
     const mockOnAddTodo = jest.fn();
