@@ -7,6 +7,7 @@ import { Routes, Route } from 'react-router-dom'
 import { useParams} from "react-router-dom";
 import ProfileDetails from './components/ProfileDetails';
 import ProfileSettings from './components/ProfileSettings';
+import blog from './components/BlogPost';
 
 const Home = () => {
   return <div>Home Page</div>;
@@ -16,7 +17,7 @@ const About = () => {
   return <div>About Page</div>;
 }
 
-const ProfileDetails = () => {
+const BlogPost = () => {
   return (
     <Routes>
       <Route path="/blog/:Id" element={<BlogPost />} />
