@@ -4,7 +4,8 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import TodoList from './components/TodoList'
 import AddTodoForm from './components/AddTodoForm'
-import { fireEvent } from '@testing-library/react'
+import __test__ from './__tests__/AddTodoForm.test.js'
+import __test2__ from './__tests__/TodoList.test.js'
 
 
 function App() {

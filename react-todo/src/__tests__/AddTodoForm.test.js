@@ -1,10 +1,9 @@
-import { fireEvent } from "@testing-library/react";
-import { render } from "@testing-library/react";
+import { render, screen , fireEvent } from "@testing-library/react";
 import AddTodoForm from "../components/AddTodoForm";
 
 test("calls onAddTodo with the correct text when form is submitted", () => {
     const mockOnAddTodo = jest.fn();
-    const { getByPlaceholderText, getByText } = render(<AddTodoForm onAddTodo={mockOnAddTodo} />);
+    render(<AddTodoForm onAddTodo={mockOnAddTodo} />);
     const input = getByPlaceholderText("Add a new todo");
     const button = getByText("Add Todo");
 
@@ -13,3 +12,11 @@ test("calls onAddTodo with the correct text when form is submitted", () => {
 
     expect(mockOnAddTodo).toHaveBeenCalledWith("New Todo");
 });
+
+function getByPlaceholderText(placeholder) {
+    return screen.getByPlaceholderText(placeholder);
+}
+
+function getByText(text) {
+    return screen.getByText(text);
+}

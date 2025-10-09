@@ -1,5 +1,4 @@
-import { fireEvent } from "@testing-library/react";
-import { render } from "@testing-library/react";
+import { render, fireEvent } from "@testing-library/react";
 import TodoList from "../components/TodoList";
 
 test("renders todos and handles toggle and delete actions", () => {
@@ -10,12 +9,12 @@ test("renders todos and handles toggle and delete actions", () => {
     const mockOnToggleTodo = jest.fn();
     const mockOnDeleteTodo = jest.fn();
 
-    const { getByText } = render(
+    render(
         <TodoList
             todos={mockTodos}
             onToggleTodo={mockOnToggleTodo}
             onDeleteTodo={mockOnDeleteTodo}
-        />
+    />
     );
 
     mockTodos.forEach((todo) => {
