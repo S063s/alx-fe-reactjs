@@ -4,6 +4,8 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import TodoList from './components/TodoList'
 import AddTodoForm from './components/AddTodoForm'
+import { fireEvent } from '@testing-library/react'
+
 
 function App() {
   const [count, setCount] = useState(0)
@@ -26,7 +28,6 @@ function App() {
     setTodos((prevTodos) => prevTodos.filter((todo) => todo.id !== id))
   }
 
-  
 
   return (
     <>
@@ -41,3 +42,4 @@ function App() {
 }
 
 export default App;
+
