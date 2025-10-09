@@ -3,6 +3,16 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import { BrowserRouter } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
+import { useParams} from "react-router-dom";
+
+const Home = () => {
+  return <div>Home Page</div>;
+}
+
+const About = () => {
+  return <div>About Page</div>;
+}
 
 function App() {
   const [count, setCount] = useState(0)

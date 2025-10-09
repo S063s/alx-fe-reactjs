@@ -22,13 +22,13 @@ const About = () => {
 }
 
 const ProfileDetails = () => {
-  const { userId } = useParams();
-  return <div>Profile Details of user {userId}</div>;
+  const { blogId } = useParams();
+  return <div> BlogPost {blogId}</div>;
 }
 
-const ProfileSettings = () => {
-  const { userId } = useParams();
-  return <div>Profile Settings of user {userId}</div>;
+function ProfileSettings() {
+    const { userId } = useParams();
+    return <div>Profile Settings of user {userId}</div>;
 }
 
 export default router;
