@@ -19,7 +19,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/profile" element={<ProfileDetails />} />
         <Route path="/profile/settings" element={<ProfileSettings />} />
-        <Route path="/blog/:Id" element={<BlogPost />} />
+        <Route path="/blog/:id" element={<BlogPost />} />
       </Routes>
       <>
         <div>
